@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:#0d0b12;
+    color:#f8efd8;
+    font-family:'Montserrat', sans-serif;
+    text-align:center;
+
+}
+
+
+.background{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top,
+    rgba(255,220,150,0.15),
+    transparent 35%),
+    radial-gradient(circle at bottom,
+    rgba(255,180,200,0.12),
+    transparent 40%);
+
+    z-index:-1;
+
+}
+
+
+
+header{
+
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+
+}
+
+
+h1{
+
+    font-family:'Cormorant Garamond', serif;
+    font-size:70px;
+    font-weight:400;
+    letter-spacing:3px;
+
+}
+
+
+h1 span{
+
+    color:#d8b56a;
+
+}
+
+
+.date{
+
+    margin-top:25px;
+    font-size:25px;
+    letter-spacing:5px;
+
+}
+
+
+.intro{
+
+    margin-top:40px;
+    line-height:2;
+    font-size:18px;
+    opacity:0.9;
+
+}
+
+
+
+section{
+
+    padding:80px 20px;
+
+}
+
+
+
+h2{
+
+    font-family:'Cormorant Garamond', serif;
+    font-size:45px;
+    margin-bottom:30px;
+
+}
+
+
+
+.mystere p{
+
+    max-width:700px;
+    margin:auto;
+    line-height:2;
+
+}
+
+
+
+.indice{
+
+    margin-top:50px;
+
+}
+
+
+
+.indice img{
+
+    width:300px;
+    border-radius:20px;
+    opacity:0.8;
+
+}
+
+
+
+.indice p{
+
+    margin-top:20px;
+
+}
+
+
+
+.cartes{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+
+}
+
+
+
+.carte{
+
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:
+    rgba(255,255,255,0.05);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    font-size:40px;
+
+    box-shadow:
+    0 0 30px rgba(255,220,150,0.2);
+
+}
+
+
+.carte p{
+
+    font-size:15px;
+    margin-top:15px;
+
+}
+
+
+
+footer{
+
+    padding:60px 20px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+
+}
+
+
+.petit{
+
+    margin-top:20px;
+    font-size:18px;
+    opacity:0.7;
+
+}
+
+
+
+/* Animation lumière */
+
+.glow{
+
+    position:absolute;
+    width:250px;
+    height:250px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,220,150,.5),
+    transparent 70%);
+
+    animation:pulse 5s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(0.8);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.2);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(.8);
+        opacity:.5;
+    }
+
+}
