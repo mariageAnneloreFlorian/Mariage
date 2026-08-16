@@ -155,6 +155,22 @@ div.cartes div.carte img {
         max-height: 240px !important;
     }
 }
+/* Photo dans l'encadré "indice" */
+.indice img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: auto !important;
+    object-fit: cover !important;
+    margin: 0 auto 25px !important;
+    border-radius: 20px !important;
+}
+
+@media (max-width: 600px) {
+    .indice img {
+        max-width: 100% !important;
+    }
+}
 
 @media (max-width: 600px) {
     section {
