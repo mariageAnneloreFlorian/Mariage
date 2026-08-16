@@ -1,9 +1,40 @@
 body {
     margin: 0;
-    background: #100d14;
-    color: #f5ead8;
+    background: #fffaf5;
+    color: #594650;
     font-family: Georgia, serif;
     text-align: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Lumière douce et ambiance florale */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 8% 12%, rgba(244, 190, 201, 0.45), transparent 25%),
+        radial-gradient(circle at 92% 18%, rgba(220, 201, 232, 0.38), transparent 25%),
+        radial-gradient(circle at 15% 85%, rgba(238, 207, 174, 0.35), transparent 28%),
+        radial-gradient(circle at 88% 82%, rgba(196, 218, 199, 0.32), transparent 27%),
+        linear-gradient(135deg, #fffaf5, #fffdfb);
+}
+
+/* Petits halos lumineux */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), transparent 18%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.75), transparent 20%);
 }
 
 section {
