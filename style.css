@@ -48,8 +48,9 @@ body::after {
 
 .marguerite, .feuille {
     position: absolute;
-    opacity: 0.85;
+    opacity: 1;
     transform-origin: center bottom;
+    filter: drop-shadow(0 2px 4px rgba(89, 70, 80, 0.15));
 }
 
 .marguerite {
