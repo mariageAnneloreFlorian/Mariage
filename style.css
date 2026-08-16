@@ -15,7 +15,6 @@ body::before {
     inset: 0;
     z-index: -2;
     pointer-events: none;
-
     background:
         radial-gradient(circle at 8% 12%, rgba(244, 190, 201, 0.45), transparent 25%),
         radial-gradient(circle at 92% 18%, rgba(220, 201, 232, 0.38), transparent 25%),
@@ -31,10 +30,50 @@ body::after {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-
     background:
         radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), transparent 18%),
         radial-gradient(circle at 70% 60%, rgba(255,255,255,0.75), transparent 20%);
+}
+
+/* ===== DÉCOR FLORAL RÉPARTI SUR TOUTE LA PAGE ===== */
+.decor-floral {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.marguerite, .feuille {
+    position: absolute;
+    opacity: 0.85;
+    transform-origin: center bottom;
+}
+
+.marguerite {
+    animation: balance-marguerite 6s ease-in-out infinite;
+}
+
+.feuille {
+    animation: balance-feuille 7s ease-in-out infinite;
+}
+
+@keyframes balance-marguerite {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+}
+
+@keyframes balance-feuille {
+    0%, 100% { transform: rotate(-10deg) translateY(0); }
+    50% { transform: rotate(8deg) translateY(-6px); }
+}
+
+/* Le contenu doit rester au-dessus du décor */
+header, section, footer {
+    position: relative;
+    z-index: 1;
 }
 
 section {
@@ -101,11 +140,9 @@ div.cartes div.carte img {
 
 /* TÉLÉPHONE */
 @media (max-width: 900px) {
-
     div.cartes {
         flex-wrap: wrap !important;
     }
-
     div.cartes div.carte {
         flex: 0 0 240px !important;
         width: 240px !important;
@@ -118,27 +155,22 @@ div.cartes div.carte img {
 }
 
 @media (max-width: 600px) {
-
     section {
         padding: 45px 15px;
     }
-
     h2 {
         font-size: 30px;
         margin-bottom: 35px;
     }
-
     section > img {
         width: 100% !important;
         max-width: 100% !important;
         height: 250px !important;
     }
-
     div.cartes {
         flex-direction: column !important;
         gap: 25px !important;
     }
-
     div.cartes div.carte {
         flex: none !important;
         width: 260px !important;
@@ -147,86 +179,3 @@ div.cartes div.carte img {
         min-height: 260px !important;
     }
 }
-/* ===== DÉCOR FLORAL DANS LES COINS ===== */
-.fleur {
-    position: absolute;
-    top: -20px;
-    width: 220px;
-    height: 220px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.9;
-    background-image:
-        radial-gradient(circle at 20% 30%, #f4bec9 0 14px, transparent 15px),
-        radial-gradient(circle at 35% 15%, #eecfae 0 10px, transparent 11px),
-        radial-gradient(circle at 15% 55%, #dcc9e8 0 12px, transparent 13px),
-        radial-gradient(circle at 45% 45%, #f4bec9 0 9px, transparent 10px),
-        radial-gradient(ellipse at 30% 70%, #c4dac7 0 20px, transparent 21px),
-        radial-gradient(ellipse at 10% 20%, #c4dac7 0 18px, transparent 19px);
-}
-.fleur-gauche { left: -30px; }
-.fleur-droite { right: -30px; transform: scaleX(-1); }
-
-@media (max-width: 600px) {
-    .fleur { width: 140px; height: 140px; }
-}
-
-/* ===== GUIRLANDE LUMINEUSE ===== */
-.guirlande {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 700px;
-    height: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    z-index: 2;
-    pointer-events: none;
-}
-.guirlande .lumiere {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ffe4b0;
-    box-shadow: 0 0 8px 3px rgba(255, 220, 170, 0.7);
-    animation: scintille 2.5s ease-in-out infinite;
-}
-.guirlande .lumiere:nth-child(odd) { animation-delay: 0.4s; }
-.guirlande .lumiere:nth-child(3n) { animation-delay: 0.9s; }
-.guirlande .lumiere:nth-child(4n) { animation-delay: 1.3s; }
-
-@keyframes scintille {
-    0%, 100% { opacity: 0.4; transform: scale(0.85); }
-    50% { opacity: 1; transform: scale(1.15); }
-}
-
-/* ===== PÉTALES QUI TOMBENT DOUCEMENT ===== */
-.petales {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-}
-.petale {
-    position: absolute;
-    top: -10px;
-    width: 12px;
-    height: 12px;
-    background: #f4bec9;
-    border-radius: 0 100% 0 100%;
-    opacity: 0.7;
-    animation: tomber linear infinite;
-}
-@keyframes tomber {
-    0% { transform: translateY(-10px) rotate(0deg); }
-    100% { transform: translateY(110vh) rotate(360deg); }
-}
-
-/* Header doit être positionné pour contenir le décor */
-header { position: relative; overflow: visible; padding-top: 30px; }
