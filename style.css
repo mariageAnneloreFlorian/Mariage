@@ -45,10 +45,10 @@ body::after {
 
 /* ===== DÉCOR FLORAL : cadre fixe tout autour du site ===== */
 .decor-floral {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
