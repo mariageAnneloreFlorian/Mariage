@@ -32,9 +32,49 @@ const svgFeuille = `
   <line x1="20" y1="4" x2="20" y2="36" stroke="#7fa885" stroke-width="1"/>
 </svg>`;
 
-function genererDecorFloral() {
+function function genererDecorFloral() {
     const conteneur = document.getElementById("decorFloral");
     if (!conteneur) return;
+
+    conteneur.innerHTML = "";
+    const hauteurPage = document.body.scrollHeight;
+    conteneur.style.height = hauteurPage + "px";
+
+    const pas = 9; // % d'écart le long des bords gauche/droite
+    const bords = [];
+
+    // Bord gauche et droit, répartis sur toute la hauteur de la page
+    for (let p = 2; p <= 98; p += pas) {
+        bords.push({ top: (hauteurPage * p / 100) + "px", left: "1%" });
+        bords.push({ top: (hauteurPage * p / 100) + "px", left: "97%" });
+    }
+    // Bord du haut et du bas
+    for (let p = 2; p <= 98; p += pas) {
+        bords.push({ top: "10px", left: p + "%" });
+        bords.push({ top: (hauteurPage - 40) + "px", left: p + "%" });
+    }
+
+    bords.forEach((pos) => {
+        const estMarguerite = Math.random() > 0.45;
+        const el = document.createElement("div");
+        el.className = estMarguerite ? "marguerite" : "feuille";
+        el.innerHTML = estMarguerite ? svgMarguerite : svgFeuille;
+
+        el.style.top = pos.top;
+        el.style.left = pos.left;
+
+        const taille = 0.6 + Math.random() * 0.5;
+        el.style.transform = `scale(${taille})`;
+
+        conteneur.appendChild(el);
+    });
+}
+
+window.addEventListener("load", () => {
+    genererDecorFloral();
+    setTimeout(genererDecorFloral, 800); // recalcule une fois les images chargées (hauteur stable)
+});
+window.addEventListener("resize", genererDecorFloral);
 
     conteneur.innerHTML = "";
 
