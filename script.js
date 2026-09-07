@@ -71,3 +71,47 @@ window.addEventListener("load", () => {
     setTimeout(genererDecorFloral, 800);
 });
 window.addEventListener("resize", genererDecorFloral);
+// ============================================================
+// COMPTE À REBOURS jusqu'au 19 juin 2027
+// ============================================================
+function demarrerCompteARebours() {
+    const elJours = document.getElementById("cr-jours");
+    const elHeures = document.getElementById("cr-heures");
+    const elMinutes = document.getElementById("cr-minutes");
+    const elSecondes = document.getElementById("cr-secondes");
+
+    if (!elJours || !elHeures || !elMinutes || !elSecondes) return;
+
+    // Date du mariage : 19 juin 2027, à 00h00 heure locale.
+    // Modifiez l'heure ici si besoin, ex : new Date("2027-06-19T14:00:00")
+    const dateMariage = new Date("2027-06-19T00:00:00");
+
+    function mettreAJour() {
+        const maintenant = new Date();
+        let ecart = dateMariage - maintenant;
+
+        if (ecart <= 0) {
+            elJours.textContent = "00";
+            elHeures.textContent = "00";
+            elMinutes.textContent = "00";
+            elSecondes.textContent = "00";
+            clearInterval(intervalle);
+            return;
+        }
+
+        const jours = Math.floor(ecart / (1000 * 60 * 60 * 24));
+        const heures = Math.floor((ecart / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((ecart / (1000 * 60)) % 60);
+        const secondes = Math.floor((ecart / 1000) % 60);
+
+        elJours.textContent = String(jours).padStart(2, "0");
+        elHeures.textContent = String(heures).padStart(2, "0");
+        elMinutes.textContent = String(minutes).padStart(2, "0");
+        elSecondes.textContent = String(secondes).padStart(2, "0");
+    }
+
+    mettreAJour();
+    const intervalle = setInterval(mettreAJour, 1000);
+}
+
+window.addEventListener("DOMContentLoaded", demarrerCompteARebours);
