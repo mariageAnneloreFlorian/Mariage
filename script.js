@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// === Décor floral : cadre fixe de marguerites + feuilles autour du site ===
+// === Décor floral : cadre fixe de marguerites + feuilles sur tout le contour de la page ===
 
 const svgMarguerite = `
 <svg width="55" height="55" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ const svgFeuille = `
   <line x1="20" y1="4" x2="20" y2="36" stroke="#7fa885" stroke-width="1"/>
 </svg>`;
 
-function function genererDecorFloral() {
+function genererDecorFloral() {
     const conteneur = document.getElementById("decorFloral");
     if (!conteneur) return;
 
@@ -70,42 +70,11 @@ function function genererDecorFloral() {
     });
 }
 
+// Génère au chargement, et régénère une fois les images chargées (hauteur de page stable)
 window.addEventListener("load", () => {
     genererDecorFloral();
-    setTimeout(genererDecorFloral, 800); // recalcule une fois les images chargées (hauteur stable)
+    setTimeout(genererDecorFloral, 800);
 });
-window.addEventListener("resize", genererDecorFloral);
-
-    conteneur.innerHTML = "";
-
-    const bords = [];
-    const pas = 9; // % d'écart entre chaque fleur le long du cadre
-
-    for (let p = 2; p <= 98; p += pas) {
-        bords.push({ top: "1%", left: p + "%" });   // bord du haut
-        bords.push({ top: "97%", left: p + "%" });  // bord du bas
-        bords.push({ top: p + "%", left: "1%" });   // bord gauche
-        bords.push({ top: p + "%", left: "97%" });  // bord droit
-    }
-
-    bords.forEach((pos) => {
-        const estMarguerite = Math.random() > 0.45;
-        const el = document.createElement("div");
-        el.className = estMarguerite ? "marguerite" : "feuille";
-        el.innerHTML = estMarguerite ? svgMarguerite : svgFeuille;
-
-        el.style.top = pos.top;
-        el.style.left = pos.left;
-
-        const taille = 0.6 + Math.random() * 0.5;
-        el.style.transform = `scale(${taille})`;
-
-        conteneur.appendChild(el);
-    });
-}
-
-// Génère au chargement et au redimensionnement
-window.addEventListener("load", genererDecorFloral);
 window.addEventListener("resize", genererDecorFloral);
 
 // ============================================================
