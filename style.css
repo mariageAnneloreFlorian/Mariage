@@ -197,3 +197,186 @@ div.cartes div.carte img {
         min-height: 260px !important;
     }
 }
+/* ============================================================
+   COMPTE À REBOURS
+   ============================================================ */
+.compte-rebours {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.compte-rebours h2 {
+    margin-bottom: 40px;
+}
+
+.rebours {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.rebours-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #fffefc;
+    box-shadow: 0 0 25px rgba(233, 185, 104, 0.18), 0 4px 14px rgba(89, 70, 80, 0.08);
+    border: 1px solid rgba(217, 168, 181, 0.35);
+}
+
+.rebours-nombre {
+    font-size: 34px;
+    line-height: 1;
+    color: #b5798b;
+    font-variant-numeric: tabular-nums;
+}
+
+.rebours-label {
+    margin-top: 6px;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    color: #9a8a92;
+}
+
+@media (max-width: 600px) {
+    .rebours {
+        gap: 16px;
+    }
+    .rebours-bloc {
+        width: 82px;
+        height: 82px;
+    }
+    .rebours-nombre {
+        font-size: 24px;
+    }
+    .rebours-label {
+        font-size: 11px;
+    }
+}
+
+/* ============================================================
+   NOTRE HISTOIRE — frise chronologique
+   ============================================================ */
+.histoire {
+    padding-top: 40px;
+}
+
+.frise {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.frise::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(to bottom, #e8b968, #d9a8b5, #c4d6c7);
+    opacity: 0.6;
+}
+
+.etape {
+    position: relative;
+    padding: 0 0 42px 26px;
+}
+
+.etape:last-child {
+    padding-bottom: 0;
+}
+
+.etape::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 4px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fffefc;
+    border: 2px solid #e8b968;
+}
+
+.etape-date {
+    display: block;
+    font-size: 14px;
+    color: #b5798b;
+    margin-bottom: 6px;
+    font-style: italic;
+}
+
+.etape p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.etape-aujourdhui::before {
+    border-color: #b5798b;
+    background: #b5798b;
+}
+
+.etape-aujourdhui .etape-date {
+    color: #594650;
+    font-weight: bold;
+    font-style: normal;
+}
+
+@media (max-width: 600px) {
+    .frise {
+        padding-left: 16px;
+    }
+    .etape {
+        padding-left: 20px;
+    }
+    .etape::before {
+        left: -24px;
+    }
+}
+
+/* ============================================================
+   INFOS PRATIQUES
+   ============================================================ */
+.infos-grille {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 26px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.info-carte {
+    background: #fffefc;
+    border-radius: 18px;
+    padding: 26px 24px;
+    box-shadow: 0 4px 20px rgba(89, 70, 80, 0.07);
+    border: 1px solid rgba(196, 218, 199, 0.4);
+}
+
+.info-carte h3 {
+    margin: 0 0 10px 0;
+    font-size: 19px;
+    font-weight: normal;
+    color: #b5798b;
+}
+
+.info-carte p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .infos-grille {
+        grid-template-columns: 1fr;
+    }
+}
