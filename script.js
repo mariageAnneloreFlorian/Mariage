@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-// === Décor floral : marguerites + feuilles réparties sur toute la page ===
+// === Décor floral : cadre fixe de marguerites + feuilles autour du site ===
 
 const svgMarguerite = `
 <svg width="55" height="55" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
@@ -37,40 +37,37 @@ function genererDecorFloral() {
     if (!conteneur) return;
 
     conteneur.innerHTML = "";
-    const hauteurPage = document.body.scrollHeight;
-    conteneur.style.height = hauteurPage + "px";
 
-    const nombreElements = Math.floor(hauteurPage / 220); // densité
+    const bords = [];
+    const pas = 9; // % d'écart entre chaque fleur le long du cadre
 
-    for (let i = 0; i < nombreElements; i++) {
+    for (let p = 2; p <= 98; p += pas) {
+        bords.push({ top: "1%", left: p + "%" });   // bord du haut
+        bords.push({ top: "97%", left: p + "%" });  // bord du bas
+        bords.push({ top: p + "%", left: "1%" });   // bord gauche
+        bords.push({ top: p + "%", left: "97%" });  // bord droit
+    }
+
+    bords.forEach((pos) => {
         const estMarguerite = Math.random() > 0.45;
         const el = document.createElement("div");
         el.className = estMarguerite ? "marguerite" : "feuille";
         el.innerHTML = estMarguerite ? svgMarguerite : svgFeuille;
 
-        // Position : alterne bords gauche/droite, dispersion plus large
-        const cote = Math.random() > 0.5 ? "left" : "right";
-        const decalageBord = 5 + Math.random() * 130; // px depuis le bord
-        el.style[cote] = decalageBord + "px";
+        el.style.top = pos.top;
+        el.style.left = pos.left;
 
-        el.style.top = (i * (hauteurPage / nombreElements) + Math.random() * 100) + "px";
-
-        const taille = 0.6 + Math.random() * 0.9;
+        const taille = 0.6 + Math.random() * 0.5;
         el.style.transform = `scale(${taille})`;
 
-        el.style.animationDelay = (Math.random() * 5) + "s";
-        el.style.animationDuration = (5 + Math.random() * 4) + "s";
-
         conteneur.appendChild(el);
-    }
+    });
 }
 
-// Génère au chargement, et régénère une fois les images chargées (hauteur de page stable)
-window.addEventListener("load", () => {
-    genererDecorFloral();
-    setTimeout(genererDecorFloral, 800);
-});
+// Génère au chargement et au redimensionnement
+window.addEventListener("load", genererDecorFloral);
 window.addEventListener("resize", genererDecorFloral);
+
 // ============================================================
 // COMPTE À REBOURS jusqu'au 19 juin 2027
 // ============================================================
