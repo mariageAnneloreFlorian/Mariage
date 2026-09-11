@@ -394,7 +394,7 @@ div.cartes div.carte img {
     font-style: italic;
     color: #b5798b;
     font-weight: normal;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 @media (max-width: 600px) {
