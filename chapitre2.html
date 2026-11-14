@@ -83,7 +83,29 @@ body{
 }
 
 .section-enquete > img.palette{
-    max-width:800px !important;
+    width:100% !important;
+    max-width:min(100%, 800px) !important;
+    height:auto !important;
+}
+
+/* Sécurité : aucune image ne peut dépasser la largeur de l'écran */
+.chapitre-container img{
+    max-width:100% !important;
+}
+
+.chapitre-container{
+    box-sizing:border-box;
+    width:100%;
+    overflow-x:hidden;
+}
+
+@media (max-width:600px){
+    .chapitre-container{
+        padding:25px 12px;
+    }
+    .section-enquete{
+        padding:22px 16px;
+    }
 }
 
 /* ===== 4 PETITES PHOTOS DES PRÉPARATIFS (entières, non coupées) ===== */
