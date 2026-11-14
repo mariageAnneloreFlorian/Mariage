@@ -1,113 +1,146 @@
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapitre 2 - Les préparatifs continuent...</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
 
-    <style>
+<title>Chapitre 2 - Les préparatifs continuent... / Hoofdstuk 2 - De voorbereidingen gaan verder...</title>
 
-        body{
-            background:#f8f1e6;
-        }
+<link rel="stylesheet" href="style.css">
 
-        .chapitre-container{
-            max-width:1100px;
-            margin:auto;
-            padding:40px 20px;
-        }
+<style>
 
-        .retour{
-            display:inline-block;
-            text-decoration:none;
-            margin-bottom:30px;
-            color:#6b5235;
-            font-weight:bold;
-        }
+body{
+    background:#f8f1e6;
+}
 
-        .hero-enquete{
-            text-align:center;
-            background:#fffaf2;
-            border:2px solid #d7c4a0;
-            border-radius:25px;
-            padding:40px;
-            margin-bottom:40px;
-            box-shadow:0 10px 25px rgba(0,0,0,0.08);
-        }
+.chapitre-container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
 
-        .hero-enquete h1{
-            margin-bottom:10px;
-        }
+.retour{
+    display:inline-block;
+    text-decoration:none;
+    margin-bottom:30px;
+    color:#6b5235;
+    font-weight:bold;
+}
 
-        .hero-enquete h2{
-            margin-top:0;
-            color:#7c5d37;
-        }
+.hero-enquete{
+    text-align:center;
+    background:#fffaf2;
+    border:2px solid #d7c4a0;
+    border-radius:25px;
+    padding:40px;
+    margin-bottom:40px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
 
-        .sous-titre{
-            font-style:italic;
-            color:#666;
-        }
+.hero-enquete h1{
+    margin-bottom:10px;
+}
 
-        .section-enquete{
-            background:white;
-            border-radius:20px;
-            padding:35px;
-            margin-bottom:30px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.06);
-        }
+.hero-enquete h2{
+    margin-top:0;
+    color:#7c5d37;
+}
 
-        .section-enquete h2{
-            color:#6f5436;
-        }
+.sous-titre{
+    font-style:italic;
+    color:#666;
+    line-height:1.7;
+}
 
-        .photo-large{
-            width:100%;
-            border-radius:15px;
-            margin-top:20px;
-        }
+.section-enquete{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    margin-bottom:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
 
-        .galerie-indices{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-            margin-top:30px;
-        }
+.section-enquete h2{
+    color:#6f5436;
+}
 
-        .indice{
-            background:#fffaf3;
-            padding:15px;
-            border-radius:15px;
-            border:1px solid #e1d3b8;
-        }
+/* ===== PHOTOS ENTIÈRES (non coupées) =====
+   style.css force les images de section à 350px de haut avec "cover",
+   ce qui coupe les photos. On annule ça ici, avec une priorité plus forte. */
+.section-enquete > img,
+.section-enquete img.photo-large{
+    display:block !important;
+    width:auto !important;
+    max-width:100% !important;
+    height:auto !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    margin:20px auto !important;
+    border-radius:15px !important;
+}
 
-        .indice img{
-            width:100%;
-            border-radius:10px;
-        }
+.section-enquete > img.palette{
+    max-width:800px !important;
+}
 
-        .palette{
-            width:100%;
-            max-width:800px;
-            display:block;
-            margin:auto;
-            border-radius:15px;
-        }
+.galerie-indices{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
 
-        .fin{
-            text-align:center;
-        }
+.galerie-indices .indice{
+    background:#fffaf3;
+    padding:15px;
+    border-radius:15px;
+    border:1px solid #e1d3b8;
+}
 
-        .chapitre3{
-            background:#ede5d6;
-            padding:20px;
-            border-radius:15px;
-            text-align:center;
-            margin-top:25px;
-        }
+.galerie-indices .indice img{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    margin:0 !important;
+    border-radius:10px !important;
+}
 
-    </style>
+.fin{
+    text-align:center;
+}
+
+.chapitre3{
+    background:#ede5d6;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    margin-top:25px;
+}
+
+.section-enquete hr{
+    border:none;
+    border-top:1px solid #e1d3b8;
+    margin:30px 0;
+}
+
+.section-enquete blockquote{
+    margin:20px 0;
+    padding:10px 20px;
+    border-left:4px solid #d7c4a0;
+    font-style:italic;
+    text-align:left;
+}
+
+.section-enquete .nl{
+    margin-top:0;
+}
+
+</style>
 </head>
 
 <body>
@@ -115,14 +148,15 @@
 <div class="chapitre-container">
 
 <a href="index.html" class="retour">
-← Retour au chapitre 1
+← Retour au chapitre 1 <span class="nl-inline">/ Terug naar hoofdstuk 1</span>
 </a>
 
+<!-- ===== EN-TÊTE ===== -->
 <div class="hero-enquete">
 
-    <h1>📁 Chapitre 2</h1>
+    <h1>📁 Chapitre 2<span class="nl-titre"><br>Hoofdstuk 2</span></h1>
 
-    <h2>Les préparatifs continuent...</h2>
+    <h2>Les préparatifs continuent...<span class="nl-titre"><br>De voorbereidingen gaan verder...</span></h2>
 
     <p class="sous-titre">
         Dossier d'enquête n°2<br>
@@ -131,12 +165,20 @@
         Beaucoup de mystères.
     </p>
 
+    <p class="sous-titre nl">
+        Onderzoeksdossier nr. 2<br>
+        Enkele antwoorden.<br>
+        Enkele stappen vooruit.<br>
+        Heel wat mysteries.
+    </p>
+
 </div>
 
 
+<!-- ===== BIENVENUE ===== -->
 <section class="section-enquete">
 
-<h2>🌸 Bienvenue dans la suite de l'aventure</h2>
+<h2>🌸 Bienvenue dans la suite de l'aventure<span class="nl-titre"><br>Welkom bij het vervolg van het avontuur</span></h2>
 
 <p>
 Bien joué !
@@ -168,37 +210,45 @@ Pour ceux qui n'auraient pas encore répondu, aucun stress : vous avez toujours 
 
 <hr>
 
+<div class="nl">
+
 <p class="nl">
 Goed gedaan!
-<br><br>
+</p>
 
+<p class="nl">
 Jullie hebben het tweede deel van onze website gevonden.
-<br><br>
+</p>
 
-Hier delen we graag nieuws over de voorbereidingen, enkele leuke momenten achter de schermen, antwoorden op veelgestelde vragen en natuurlijk ook nieuwe aanwijzingen voor de meest gemotiveerde speurders.
-<br><br>
+<p class="nl">
+Hier delen we graag het laatste nieuws over de organisatie, enkele momenten van de voorbereidingen, antwoorden op vragen die we regelmatig krijgen… en natuurlijk ook enkele nieuwe aanwijzingen voor de meest gemotiveerde speurders.
+</p>
 
-We willen ook iedereen bedanken die al gereageerd heeft op de uitnodiging.
-<br><br>
+<p class="nl">
+We willen ook iedereen bedanken die al op de uitnodiging heeft gereageerd. Jullie enthousiasme doet ons enorm veel plezier en helpt ons erg bij de organisatie van dit weekend.
+</p>
 
-Voor wie nog niet geantwoord heeft: geen paniek, jullie hebben nog tijd tot 31 december.
-<br><br>
+<p class="nl">
+Voor wie nog niet geantwoord heeft: geen paniek, jullie hebben nog tijd tot 31 december. Maar als je je beschikbaarheid al kent, laat het ons dan gerust weten, zodat we met andere zaken verder kunnen.
+</p>
 
-✅ Nee, we trouwen niet in China.
-<br><br>
+<p class="nl">
+✅ Nee, we trouwen niet in China.<br><br>
 
-✅ Ja, alle maaltijden van donderdagavond tot zondagmiddag zijn inbegrepen.
-<br><br>
+✅ Ja, alle maaltijden van donderdagavond tot zondagmiddag zijn inbegrepen.<br><br>
 
 ✅ Nee Annelien, je hoeft geen chips mee te brengen, Florian zal er voldoende voorzien hebben.
 </p>
 
+</div>
+
 </section>
 
 
+<!-- ===== INVITATIONS ===== -->
 <section class="section-enquete">
 
-<h2>📬 Toutes les invitations ont été envoyées</h2>
+<h2>📬 Toutes les invitations ont été envoyées<span class="nl-titre"><br>Alle uitnodigingen zijn verstuurd</span></h2>
 
 <p>
 Ça y est !
@@ -212,14 +262,33 @@ Tous nos invités ont désormais reçu leur invitation officielle.
 L'aventure est officiellement lancée pour tout le monde et les préparatifs continuent d'avancer à grands pas.
 </p>
 
+<hr>
+
+<div class="nl">
+
+<p class="nl">
+Het is zover!
+</p>
+
+<p class="nl">
+Al onze gasten hebben nu hun officiële uitnodiging ontvangen.
+</p>
+
+<p class="nl">
+Het avontuur is officieel gestart voor iedereen en de voorbereidingen gaan met rasse schreden vooruit.
+</p>
+
+</div>
+
 </section>
 
 
+<!-- ===== PRÉPARATIFS ===== -->
 <section class="section-enquete">
 
-<h2>📸 Les préparatifs avancent</h2>
+<h2>📸 Les préparatifs avancent<span class="nl-titre"><br>De voorbereidingen vorderen</span></h2>
 
-<img src="images/Avancement.jpg" class="photo-large">
+<img src="images/Avancement.jpg" class="photo-large" alt="Avancement des préparatifs / Vooruitgang van de voorbereidingen">
 
 <p>
 Ces dernières semaines ont été riches en avancées.
@@ -247,14 +316,47 @@ Nous allons également prochainement commencer les essayages avec nos témoins.
 Plus le temps passe, plus le grand jour se rapproche… et plus le stress commence doucement à monter !
 </p>
 
+<hr>
+
+<div class="nl">
+
+<p class="nl">
+De voorbije weken hebben heel wat vooruitgang gebracht.
+</p>
+
+<p class="nl">
+Dit hebben we intussen vastgelegd:
+</p>
+
+<p class="nl">
+✅ De trouwzaal<br>
+✅ Het eten<br>
+✅ De fotograaf
+</p>
+
+<p class="nl">
+Er is ook nog een belangrijke stap gezet: onze trouwringen zijn gekozen en worden momenteel gemaakt.
+</p>
+
+<p class="nl">
+Binnenkort beginnen we ook met de pasafspraken met onze getuigen.
+</p>
+
+<p class="nl">
+Hoe meer tijd er voorbijgaat, hoe dichter de grote dag komt… en hoe meer de stress zachtjes begint te stijgen!
+</p>
+
+</div>
+
 </section>
 
 
+<!-- ===== LEXY ===== -->
 <section class="section-enquete">
 
-<h2>🐱 Communiqué officiel de Lexy</h2>
+<h2>🐱 Communiqué officiel de Lexy<span class="nl-titre"><br>Officieel communiqué van Lexy</span></h2>
 
-<img src="images/lexy.jpg" class="photo-large">
+<img src="images/lexy.jpg" class="photo-large" alt="Lexy">
 
 <p>
 Après étude attentive de son invitation, Lexy a décidé de ne pas participer aux festivités.
@@ -274,22 +376,35 @@ La direction regrette cette décision mais respecte son choix.
 
 <hr>
 
+<div class="nl">
+
 <p class="nl">
-Na grondig overleg heeft Lexy beslist niet aanwezig te zijn.
+Na grondige studie van haar uitnodiging heeft Lexy beslist niet aan de festiviteiten deel te nemen.
+</p>
+
+<p class="nl">
+<strong>Aangehaalde reden:</strong>
 </p>
 
 <blockquote class="nl">
 Als ik niet het middelpunt van de aandacht ben tijdens het hele weekend, blijf ik liever thuis.
 </blockquote>
 
+<p class="nl">
+De directie betreurt deze beslissing, maar respecteert haar keuze.
+</p>
+
+</div>
+
 </section>
 
 
+<!-- ===== COULEURS ===== -->
 <section class="section-enquete">
 
-<h2>🎨 Les couleurs du samedi</h2>
+<h2>🎨 Les couleurs du samedi<span class="nl-titre"><br>De kleuren van zaterdag</span></h2>
 
-<img src="images/palette-couleurs.jpeg" class="palette">
+<img src="images/palette-couleurs.jpeg" class="palette" alt="Palette de couleurs / Kleurenpalet">
 
 <p>
 Plusieurs personnes nous ont demandé quelles couleurs nous avions imaginées pour l'ambiance du samedi.
@@ -307,12 +422,35 @@ Il ne s'agit absolument pas d'une obligation.
 Le plus important reste que chacun se sente bien dans sa tenue.
 </p>
 
+<hr>
+
+<div class="nl">
+
+<p class="nl">
+Meerdere mensen vroegen ons welke kleuren we voor de sfeer van zaterdag in gedachten hadden.
+</p>
+
+<p class="nl">
+Dit palet is gewoon bedoeld als inspiratie.
+</p>
+
+<p class="nl">
+Het is absoluut geen verplichting.
+</p>
+
+<p class="nl">
+Het belangrijkste blijft dat iedereen zich goed voelt in zijn of haar outfit.
+</p>
+
+</div>
+
 </section>
 
 
+<!-- ===== MUSIQUE ===== -->
 <section class="section-enquete">
 
-<h2>🎵 Musique du moment</h2>
+<h2>🎵 Musique du moment<span class="nl-titre"><br>Muziek van het moment</span></h2>
 
 <h3>Sunny - Bobby Hebb</h3>
 
@@ -320,12 +458,17 @@ Le plus important reste que chacun se sente bien dans sa tenue.
 Parce que chaque période des préparatifs mérite sa propre bande-son.
 </p>
 
+<p class="nl">
+Want elke periode van de voorbereidingen verdient zijn eigen soundtrack.
+</p>
+
 </section>
 
 
+<!-- ===== NOUVELLES PIÈCES ===== -->
 <section class="section-enquete">
 
-<h2>🔎 Nouvelles pièces du dossier</h2>
+<h2>🔎 Nouvelles pièces du dossier<span class="nl-titre"><br>Nieuwe stukken in het dossier</span></h2>
 
 <p>
 Devant les nombreuses demandes des enquêteurs, nous avons accepté de dévoiler quelques nouveaux éléments.
@@ -335,22 +478,30 @@ Devant les nombreuses demandes des enquêteurs, nous avons accepté de dévoiler
 Nous ne garantissons cependant pas qu'ils vous aideront réellement...
 </p>
 
+<p class="nl">
+Na de vele vragen van de speurders hebben we ingestemd om enkele nieuwe elementen te onthullen.
+</p>
+
+<p class="nl">
+We garanderen echter niet dat ze jullie echt zullen helpen...
+</p>
+
 <div class="galerie-indices">
 
 <div class="indice">
-<img src="images/indice4.jpg">
+<img src="images/indice4.jpg" alt="indice 4 / aanwijzing 4">
 </div>
 
 <div class="indice">
-<img src="images/indice5.jpg">
+<img src="images/indice5.jpg" alt="indice 5 / aanwijzing 5">
 </div>
 
 <div class="indice">
-<img src="images/indice6.jpg">
+<img src="images/indice6.jpg" alt="indice 6 / aanwijzing 6">
 </div>
 
 <div class="indice">
-<img src="images/indice7.jpg">
+<img src="images/indice7.jpg" alt="indice 7 / aanwijzing 7">
 </div>
 
 </div>
@@ -361,12 +512,19 @@ Nombre de personnes ayant trouvé le lieu exact : nous ne confirmerons rien.
 Nombre de personnes persuadées d'avoir trouvé : beaucoup plus.
 </p>
 
+<p class="nl" style="text-align:center;">
+Aantal personen dat de exacte locatie gevonden heeft: we bevestigen niets.
+<br><br>
+Aantal personen dat ervan overtuigd is dat ze die gevonden hebben: veel meer.
+</p>
+
 </section>
 
 
+<!-- ===== CONCLUSION ===== -->
 <section class="section-enquete fin">
 
-<h2>🌼 Conclusion</h2>
+<h2>🌼 Conclusion<span class="nl-titre"><br>Besluit</span></h2>
 
 <p>
 Si vous êtes arrivés jusqu'ici, c'est probablement que vous faites partie des invités les plus curieux.
@@ -399,8 +557,45 @@ Ou peut-être simplement de nouvelles fausses pistes.
 😉
 </p>
 
+<hr>
+
+<div class="nl">
+
+<p class="nl">
+Als jullie tot hier gekomen zijn, behoren jullie waarschijnlijk tot de meest nieuwsgierige gasten.
+</p>
+
+<p class="nl">
+Het dossier wordt steeds dikker.
+</p>
+
+<p class="nl">
+De trouwringen worden gemaakt.
+<br>
+De pasafspraken komen eraan.
+<br>
+De voorbereidingen vorderen.
+</p>
+
+<p class="nl">
+En ondanks al jullie theorieën blijft het mysterie nog volledig intact.
+</p>
+
+<p class="nl">
+Tot over enkele weken voor het volgende hoofdstuk...
+</p>
+
+<p class="nl">
+Misschien met nieuwe aanwijzingen.
+<br>
+Of misschien gewoon met nieuwe valse sporen.
+😉
+</p>
+
 <div class="chapitre3">
 🔒 Chapitre 3 à venir...
+<br>
+<span class="nl">Hoofdstuk 3 volgt binnenkort...</span>
 </div>
 
 </section>
@@ -409,72 +604,3 @@ Ou peut-être simplement de nouvelles fausses pistes.
 
 </body>
 </html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Chapitre 2 - Les préparatifs continuent...</title>
-
-<link rel="stylesheet" href="style.css">
-
-<style>
-
-body{
-    background:#f6efe2;
-}
-
-.chapitre-container{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-.retour{
-    display:inline-block;
-    margin-bottom:30px;
-    text-decoration:none;
-    color:#7b5a3c;
-    font-weight:bold;
-    font-size:1.1rem;
-}
-
-.hero-enquete{
-    text-align:center;
-    background:#fffaf2;
-    border:2px solid #d6c3a4;
-    border-radius:25px;
-    padding:50px 30px;
-    margin-bottom:40px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.hero-enquete h1{
-    margin-bottom:10px;
-}
-
-.hero-enquete h2{
-    color:#795636;
-}
-
-.sous-titre{
-    color:#666;
-    font-style:italic;
-    line-height:1.7;
-}
-
-.section-enquete{
-    background:white;
-    margin-bottom:30px;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.06);
-}
-
-.section-enquete h2{
-    color:#765538;
-}
-
-.photo-large{
-    width:100%;
-    border-radius:15px;
-    margin:20px 0;
-}
