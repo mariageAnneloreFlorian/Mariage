@@ -402,3 +402,49 @@ div.cartes div.carte img {
         font-size: 10px;
     }
 }
+/* ========================= */
+/* CHAPITRE 2 */
+/* ========================= */
+
+.chapitre-suivant{
+    text-align:center;
+    padding:70px 20px;
+}
+
+.dossier-enquete{
+    max-width:700px;
+    margin:auto;
+    background:#fffdf8;
+    border:2px solid #d8c7a3;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dossier-enquete h2{
+    margin-top:0;
+    color:#7a5b3a;
+}
+
+.btn-chapitre{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 30px;
+    text-decoration:none;
+    background:#8ba37d;
+    color:white;
+    border-radius:50px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-chapitre:hover{
+    background:#6d8760;
+    transform:translateY(-2px);
+}
+
+.note-enquete{
+    margin-top:20px;
+    font-style:italic;
+    color:#666;
+}
