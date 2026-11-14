@@ -86,6 +86,32 @@ body{
     max-width:800px !important;
 }
 
+/* ===== 4 PETITES PHOTOS DES PRÉPARATIFS (entières, non coupées) ===== */
+.galerie-preparatifs{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin:20px 0;
+    align-items:center;
+}
+
+.galerie-preparatifs img{
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+    margin:0 !important;
+    border-radius:12px !important;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width:700px){
+    .galerie-preparatifs{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
 .galerie-indices{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -288,7 +314,12 @@ Het avontuur is officieel gestart voor iedereen en de voorbereidingen gaan met r
 
 <h2>📸 Les préparatifs avancent<span class="nl-titre"><br>De voorbereidingen vorderen</span></h2>
 
-<img src="images/Avancement.jpg" class="photo-large" alt="Avancement des préparatifs / Vooruitgang van de voorbereidingen">
+<div class="galerie-preparatifs">
+    <img src="images/avancement1.jpg" alt="Préparatifs 1 / Voorbereidingen 1">
+    <img src="images/avancement2.jpg" alt="Préparatifs 2 / Voorbereidingen 2">
+    <img src="images/avancement3.jpg" alt="Préparatifs 3 / Voorbereidingen 3">
+    <img src="images/avancement4.jpg" alt="Préparatifs 4 / Voorbereidingen 4">
+</div>
 
 <p>
 Ces dernières semaines ont été riches en avancées.
